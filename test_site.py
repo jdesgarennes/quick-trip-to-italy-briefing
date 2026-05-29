@@ -14,6 +14,7 @@ assert 'assets/chapter-3-things-progress.jpg' in html
 assert 'assets/chapter-3-fremont-east.jpg' in html
 assert 'assets/chapter-4-craps-winnings.jpg' in html
 assert 'assets/chapter-4-things-heat-up.jpg' in html
+assert 'assets/chapter-7-tiki-room.jpg' in html
 assert 'assets/quick-trip-to-italy.jpg' in html
 assert 'Three smiling people taking a neon-lit selfie outside an entertainment venue at night' in html
 assert 'Three passengers smiling for a car selfie during the ride to the evening destination' in html
@@ -24,6 +25,7 @@ assert 'A Bigfoot-style street performer dancing on a neon-lit pedestrian entert
 assert 'The Fremont East District neon sign glowing over a crowded nighttime street scene' in html
 assert 'A close-up of casino chips on a craps table rail including a visible one hundred dollar chip and a green chip' in html
 assert 'Three people sitting under red and pink tiki bar lighting with a large tiki face decoration behind them' in html
+assert 'Three people taking a selfie in a purple and red lit tiki room with thatched decor and a large wall face behind them' in html
 assert 'Two smiling diners at an Italian-style cafe table with dessert, drinks, and a shopping bag' in html
 assert (root / 'assets' / 'chapter-1-prelude.jpg').exists()
 assert (root / 'assets' / 'chapter-1-ride-there.jpg').exists()
@@ -34,6 +36,7 @@ assert (root / 'assets' / 'chapter-3-things-progress.jpg').exists()
 assert (root / 'assets' / 'chapter-3-fremont-east.jpg').exists()
 assert (root / 'assets' / 'chapter-4-craps-winnings.jpg').exists()
 assert (root / 'assets' / 'chapter-4-things-heat-up.jpg').exists()
+assert (root / 'assets' / 'chapter-7-tiki-room.jpg').exists()
 assert (root / 'assets' / 'quick-trip-to-italy.jpg').exists()
 assert 'Chapter 1 — Prelude' in html
 assert 'Neon Contact Established' in html
@@ -53,6 +56,8 @@ assert 'Chapter 4 — Winnings at the Craps Table' in html
 assert 'Dice Department Reports Profit' in html
 assert 'Chapter 4 — Things Heat Up' in html
 assert 'Tiki Tribunal Convenes' in html
+assert 'Chapter 7 — The Tiki Room' in html
+assert 'Thatched Roof Headquarters Activated' in html
 assert 'Chapter 4 — Dessert Intelligence' in html
 assert 'Quick Trip to Italy Confirmed' in html
 assert 'the night is no longer casual' in html
@@ -61,6 +66,7 @@ assert 'if Bigfoot joins the itinerary' in html
 assert 'Fremont East has been located' in html
 assert 'dice have spoken' in html
 assert 'volcano mode' in html
+assert 'tiki room is not a location' in html
 assert 'good pay table, suspicious cards' in html
 assert 'https://github.com/jdesgarennes/quick-trip-to-italy-briefing' in html
 print('Smoke test passed')
