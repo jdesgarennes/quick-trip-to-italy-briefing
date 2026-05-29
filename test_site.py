@@ -80,5 +80,12 @@ assert 'tiki room is not a location' in html
 assert 'Fremont old-school casino energy has been confirmed' in html
 assert 'last supper has been investigated thoroughly' in html
 assert 'good pay table, suspicious cards' in html
+
+assert 'MISSION CLOSED' in html
+assert 'Filed Under: Night Out Command — Final Report' in html
+assert 'All evidence has been collected' in html
+assert 'Mission Closed by Headquarters' in html
+assert 'Finalized with unreasonable confidence' in html
+assert 'Mission status: published' in html
 assert 'https://github.com/jdesgarennes/quick-trip-to-italy-briefing' in html
 print('Smoke test passed')
