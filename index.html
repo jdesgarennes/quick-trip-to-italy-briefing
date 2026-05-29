@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quick Trip to Italy Operations Briefing</title>
-  <meta name="description" content="A very official briefing on dessert, fork readiness, and a quick trip to Italy.">
+  <title>Quick Trip to Italy: Night Mission Log</title>
+  <meta name="description" content="A funny running storyline of one night, filed as a very official mission log.">
   <style>
     :root {
       --espresso: #2f2118;
@@ -13,8 +13,9 @@
       --tomato: #b84a36;
       --olive: #596c3a;
       --ink: #231a14;
-      --paper: rgba(255, 250, 238, 0.88);
+      --paper: rgba(255, 250, 238, 0.9);
       --shadow: 0 24px 70px rgba(47, 33, 24, 0.22);
+      --pink: #e45bd0;
     }
     * { box-sizing: border-box; }
     body {
@@ -22,22 +23,13 @@
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 12% 12%, rgba(246, 210, 122, .55), transparent 32%),
+        radial-gradient(circle at 12% 10%, rgba(228, 91, 208, .26), transparent 30%),
         radial-gradient(circle at 86% 18%, rgba(184, 74, 54, .20), transparent 30%),
-        linear-gradient(135deg, #fff7e8 0%, #f2dec2 55%, #d8b789 100%);
+        radial-gradient(circle at 22% 82%, rgba(246, 210, 122, .45), transparent 34%),
+        linear-gradient(135deg, #fff7e8 0%, #f2dec2 48%, #d8b789 100%);
       min-height: 100vh;
     }
-    .page {
-      width: min(1180px, calc(100% - 34px));
-      margin: 0 auto;
-      padding: 34px 0 44px;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.04fr .96fr;
-      gap: 28px;
-      align-items: center;
-    }
+    .page { width: min(1180px, calc(100% - 34px)); margin: 0 auto; padding: 34px 0 44px; }
     .card {
       background: var(--paper);
       border: 1px solid rgba(47, 33, 24, .14);
@@ -46,29 +38,18 @@
       overflow: hidden;
       backdrop-filter: blur(12px);
     }
-    .photo-card { padding: 14px; transform: rotate(-1.2deg); }
-    .photo-card img {
-      display: block;
-      width: 100%;
-      border-radius: 22px;
-      border: 1px solid rgba(47, 33, 24, .13);
-    }
-    .stamp {
-      display: inline-flex;
-      gap: 8px;
+    .hero {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 28px;
       align-items: center;
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: rgba(89, 108, 58, .13);
-      color: var(--olive);
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
+      margin-bottom: 28px;
     }
+    .hero-photo { padding: 14px; transform: rotate(-1deg); }
+    .hero-photo img, .chapter img { display: block; width: 100%; border-radius: 22px; border: 1px solid rgba(47, 33, 24, .13); }
     .briefing { padding: 34px; position: relative; }
     .briefing:after {
-      content: "APPROVED BY DESSERT";
+      content: "MISSION OPEN";
       position: absolute;
       right: 26px;
       bottom: 22px;
@@ -81,78 +62,73 @@
       letter-spacing: .08em;
       font-size: 13px;
     }
+    .stamp {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(89, 108, 58, .13);
+      color: var(--olive);
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 7vw, 86px);
+      font-size: clamp(44px, 7vw, 88px);
       line-height: .9;
       margin: 20px 0 18px;
       letter-spacing: -.06em;
       color: var(--espresso);
     }
-    .lede {
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.42;
-      margin: 0 0 24px;
-      color: rgba(35,26,20,.76);
-    }
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 26px;
-    }
-    .metric {
-      background: #fffaf0;
-      border: 1px solid rgba(47,33,24,.12);
-      border-radius: 18px;
-      padding: 15px;
-    }
+    h2, h3 { font-family: Georgia, "Times New Roman", serif; color: var(--espresso); }
+    h2 { font-size: clamp(34px, 5vw, 58px); margin: 0 0 12px; letter-spacing: -.04em; }
+    h3 { font-size: 30px; margin: 0 0 10px; }
+    .lede { font-size: clamp(18px, 2vw, 23px); line-height: 1.42; margin: 0 0 24px; color: rgba(35,26,20,.76); }
+    p { line-height: 1.62; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+    .metric { background: #fffaf0; border: 1px solid rgba(47,33,24,.12); border-radius: 18px; padding: 15px; }
     .metric b { display: block; font-size: 22px; color: var(--tomato); }
     .metric span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: rgba(35,26,20,.62); font-weight: 800; }
-    .sections {
+    .timeline-intro { padding: 28px; margin-bottom: 20px; display: flex; justify-content: space-between; gap: 18px; align-items: end; }
+    .timeline-intro p { margin: 0; color: rgba(35,26,20,.68); max-width: 640px; }
+    .chapters { display: grid; gap: 22px; }
+    .chapter {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 28px;
-    }
-    .section-card { padding: 24px; }
-    h2 {
-      margin: 0 0 10px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      color: var(--espresso);
-    }
-    p { line-height: 1.62; }
-    .section-card p { margin: 0; color: rgba(35,26,20,.72); }
-    .menu {
-      margin-top: 28px;
-      padding: 26px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(260px, .85fr) 1.15fr;
       gap: 22px;
+      padding: 16px;
       align-items: center;
     }
-    .menu ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-    .menu li {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      border-bottom: 1px dashed rgba(47,33,24,.22);
-      padding-bottom: 10px;
-      font-weight: 750;
+    .chapter:nth-child(even) { grid-template-columns: 1.15fr minmax(260px, .85fr); }
+    .chapter:nth-child(even) .chapter-photo { order: 2; }
+    .chapter-copy { padding: 18px 18px 18px 6px; }
+    .chapter:nth-child(even) .chapter-copy { padding: 18px 6px 18px 18px; }
+    .chapter-label { color: var(--tomato); font-size: 13px; font-weight: 950; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter p { margin: 0 0 12px; color: rgba(35,26,20,.74); }
+    .quote {
+      background: #fffaf0;
+      border-left: 5px solid var(--pasta);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 800;
+      color: rgba(47,33,24,.82);
     }
-    .menu small { color: rgba(35,26,20,.55); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
-    .footer {
-      text-align: center;
-      margin-top: 24px;
-      color: rgba(35,26,20,.62);
-      font-size: 14px;
-    }
+    .action-panel { margin-top: 24px; padding: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: center; }
+    .action-panel ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .action-panel li { display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px dashed rgba(47,33,24,.22); padding-bottom: 10px; font-weight: 750; }
+    .action-panel small { color: rgba(35,26,20,.55); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .footer { text-align: center; margin-top: 24px; color: rgba(35,26,20,.62); font-size: 14px; }
     a { color: var(--tomato); font-weight: 800; }
     @media (max-width: 880px) {
-      .hero, .sections, .menu { grid-template-columns: 1fr; }
-      .photo-card { transform: none; }
+      .hero, .chapter, .chapter:nth-child(even), .action-panel { grid-template-columns: 1fr; }
+      .hero-photo { transform: none; }
+      .chapter:nth-child(even) .chapter-photo { order: 0; }
+      .chapter-copy, .chapter:nth-child(even) .chapter-copy { padding: 8px; }
       .metrics { grid-template-columns: 1fr; }
+      .timeline-intro { display: block; }
       .briefing:after { position: static; display: inline-block; margin-top: 24px; }
     }
   </style>
@@ -160,47 +136,66 @@
 <body>
   <main class="page">
     <section class="hero" aria-label="Main briefing">
-      <figure class="card photo-card">
-        <img src="assets/quick-trip-to-italy.jpg" alt="Two smiling diners at an Italian-style cafe table with dessert, drinks, and a shopping bag">
+      <figure class="card hero-photo">
+        <img src="assets/chapter-1-prelude.jpg" alt="Three smiling people taking a neon-lit selfie outside an entertainment venue at night">
       </figure>
       <div class="card briefing">
-        <div class="stamp">Official Casino Food Court Field Report</div>
-        <h1>Quick Trip to Italy Operations Briefing</h1>
-        <p class="lede">Two agents entered the plaza for “just a quick bite.” Minutes later, dessert was secured, shopping evidence appeared, and the mission was upgraded to full international snack diplomacy.</p>
+        <div class="stamp">Filed Under: Night Out Command</div>
+        <h1>Quick Trip to Italy: Night Mission Log</h1>
+        <p class="lede">What began as a normal evening has been formally upgraded to a multi-chapter field report involving neon, refreshments, suspiciously high morale, and eventually dessert intelligence.</p>
         <div class="metrics" aria-label="Mission metrics">
-          <div class="metric"><b>10/10</b><span>Smile Compliance</span></div>
-          <div class="metric"><b>High</b><span>Gelato Containment Level</span></div>
-          <div class="metric"><b>Ready</b><span>Fork Readiness</span></div>
+          <div class="metric"><b>Active</b><span>Selfie Protocol</span></div>
+          <div class="metric"><b>High</b><span>Neon Exposure</span></div>
+          <div class="metric"><b>Pending</b><span>Dessert Deployment</span></div>
         </div>
       </div>
     </section>
 
-    <section class="sections" aria-label="Situation cards">
-      <article class="card section-card">
-        <h2>Executive Summary</h2>
-        <p>The table is marble, the backdrop is dramatic, and the bag clearly states that a quick trip to Italy has occurred. The committee accepts this as legally binding vacation documentation.</p>
+    <section class="card timeline-intro" aria-label="Timeline introduction">
+      <div>
+        <div class="stamp">Running Storyline</div>
+        <h2>The Official Timeline</h2>
+      </div>
+      <p>Each chapter is added as evidence arrives. Accuracy is questionable. Confidence is extremely high.</p>
+    </section>
+
+    <section class="chapters" aria-label="Night mission chapters">
+      <article class="card chapter">
+        <figure class="chapter-photo">
+          <img src="assets/chapter-1-prelude.jpg" alt="Three smiling people taking a neon-lit selfie outside an entertainment venue at night">
+        </figure>
+        <div class="chapter-copy">
+          <div class="chapter-label">Chapter 1 — Prelude</div>
+          <h3>Neon Contact Established</h3>
+          <p>The crew assembled beneath the glow of a sign bright enough to be seen from low orbit. One refreshment was already secured, indicating that the evening had moved beyond planning and into active operations.</p>
+          <p class="quote">Official note: morale is high, visibility is pink, and the peace sign confirms full mission authorization.</p>
+        </div>
       </article>
-      <article class="card section-card">
-        <h2>Dessert Intelligence</h2>
-        <p>One spoonful has already been intercepted. A second utensil is visible. This confirms a coordinated dessert operation with no intention of sharing operational control.</p>
-      </article>
-      <article class="card section-card">
-        <h2>Threat Assessment</h2>
-        <p>Primary threat: ordering “one small thing” and leaving with a bag, a story, and a new favorite place. Secondary threat: the hanging prosciutto judging everyone’s choices.</p>
+
+      <article class="card chapter">
+        <figure class="chapter-photo">
+          <img src="assets/quick-trip-to-italy.jpg" alt="Two smiling diners at an Italian-style cafe table with dessert, drinks, and a shopping bag">
+        </figure>
+        <div class="chapter-copy">
+          <div class="chapter-label">Chapter 2 — Dessert Intelligence</div>
+          <h3>Quick Trip to Italy Confirmed</h3>
+          <p>After the prelude, the team entered the snack theater and emerged with documented proof of international vibes. A table was claimed, dessert was placed under observation, and the mission expanded into full culinary diplomacy.</p>
+          <p class="quote">The bag says Italy. The dessert says victory. The committee accepts both as evidence.</p>
+        </div>
       </article>
     </section>
 
-    <section class="card menu" aria-label="Action items">
+    <section class="card action-panel" aria-label="Action items">
       <div>
-        <div class="stamp">Action Items</div>
+        <div class="stamp">Standing Orders</div>
         <h2>Next Steps From Headquarters</h2>
-        <p>Remain calm. Protect the dessert perimeter. Smile like the receipt is classified. If questioned, point to the bag and say, “It was a quick trip to Italy.”</p>
+        <p>Continue gathering evidence. Smile directly into any available camera. Protect the dessert perimeter. If the plot escalates, document it immediately.</p>
       </div>
       <ul>
         <li><span>Maintain vacation energy</span><small>Ongoing</small></li>
+        <li><span>Log all neon incidents</span><small>Required</small></li>
         <li><span>Audit dessert quality</span><small>Repeatedly</small></li>
-        <li><span>Keep fork within reach</span><small>Critical</small></li>
-        <li><span>Document all snack wins</span><small>Mandatory</small></li>
+        <li><span>Document snack wins</span><small>Mandatory</small></li>
       </ul>
     </section>
 
