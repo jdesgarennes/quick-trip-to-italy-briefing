@@ -66,7 +66,7 @@ assert 'Chapter 7 — The Tiki Room' in html
 assert 'Thatched Roof Headquarters Activated' in html
 assert 'Chapter Eat — Old School Casino Fremont' in html
 assert 'Chandelier Department Opens the Vault' in html
-assert 'Near Final Chapter — Dinner Debrief' in html
+assert 'The Last Supper' in html
 assert 'Plate Evidence Mostly Destroyed' in html
 assert 'Chapter 4 — Dessert Intelligence' in html
 assert 'Quick Trip to Italy Confirmed' in html
@@ -78,7 +78,7 @@ assert 'dice have spoken' in html
 assert 'volcano mode' in html
 assert 'tiki room is not a location' in html
 assert 'Fremont old-school casino energy has been confirmed' in html
-assert 'food has been investigated thoroughly' in html
+assert 'last supper has been investigated thoroughly' in html
 assert 'good pay table, suspicious cards' in html
 assert 'https://github.com/jdesgarennes/quick-trip-to-italy-briefing' in html
 print('Smoke test passed')
