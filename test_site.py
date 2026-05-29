@@ -24,13 +24,14 @@ assert 'Chapter 1 — Prelude' in html
 assert 'Neon Contact Established' in html
 assert 'Chapter 1 — Ride There' in html
 assert 'Transport Unit Morale Check' in html
-assert 'Chapter 2 — The Night Progresses' in html
-assert 'Souvenir District: Leg Lamp Encounter' in html
-assert 'Chapter 3 — Casino Math Department' in html
+assert 'Chapter 2 — Casino Math Department' in html
 assert 'Royal Flush Briefing Denied' in html
+assert 'good pay table, suspicious cards' in html
+assert 'Chapter 3 — The Night Progresses' in html
+assert 'Souvenir District: Leg Lamp Encounter' in html
 assert 'Chapter 4 — Dessert Intelligence' in html
 assert 'Quick Trip to Italy Confirmed' in html
 assert 'the night is no longer casual' in html
-assert 'The screen delivered character development' in html
+assert 'good pay table, suspicious cards' in html
 assert 'https://github.com/jdesgarennes/quick-trip-to-italy-briefing' in html
 print('Smoke test passed')
